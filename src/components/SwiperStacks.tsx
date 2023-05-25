@@ -24,6 +24,11 @@ import reactJs from '../assets/react-js.svg'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { A11y, Navigation, Autoplay } from 'swiper'
+import { Swiper as SwiperCore } from 'swiper/types'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import { useRef } from 'react'
+import { ArrowLeftCircle, ArrowRightCircle } from 'lucide-react'
 
 export function SwiperStacks() {
   const stacks = [
@@ -109,18 +114,25 @@ export function SwiperStacks() {
     },
   ]
 
+  const swiperRef = useRef<SwiperCore>()
+
   return (
     <Swiper
+      onBeforeInit={(swiper) => {
+        swiperRef.current = swiper
+      }}
       modules={[Navigation, A11y, Autoplay]}
-      spaceBetween={0}
+      // navigation={{
+      //   nextEl: ,
+      //   prevEl: '.image-swiper-button-prev',
+      //   disabledClass: 'swiper-button-disabled',
+      // }}
       slidesPerView={7}
-      navigation
       pagination={{ clickable: true }}
       loop
       autoplay={{ delay: 1000 }}
-      effect=""
       speed={2500}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSwiper={(swiper) => console.log(swiper)}
     >
       {stacks.map((stack) => (
         <SwiperSlide key={stack.name}>
@@ -139,6 +151,18 @@ export function SwiperStacks() {
           </figure>
         </SwiperSlide>
       ))}
+      <button
+        onClick={() => swiperRef.current?.slidePrev()}
+        className="absolute top-6 z-10"
+      >
+        <ArrowLeftCircle className="text-purple-600" />
+      </button>
+      <button
+        onClick={() => swiperRef.current?.slideNext()}
+        className="absolute right-0 top-6 z-10"
+      >
+        <ArrowRightCircle className="text-purple-600" />
+      </button>
     </Swiper>
   )
 }
