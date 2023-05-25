@@ -4,10 +4,10 @@ import { ActiveLink } from './ActiveLink'
 
 export function NavBar() {
   return (
-    <header className="bg-purple-950">
-      <div className="container m-auto flex flex-row justify-between p-4">
+    <header className="">
+      <div className="m-auto flex flex-row justify-between border-b-2 border-b-violet-600 px-16 py-6">
         <Link href="/" className="">
-          <ArrowLeft className="h-6 w-6 text-white hover:text-purple-200" />
+          <ArrowLeft className="h-6 w-6 text-violet-700 hover:text-violet-900" />
         </Link>
 
         <div className="flex justify-between gap-6">
