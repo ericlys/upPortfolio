@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex h-screen w-screen flex-col items-center justify-center">
       <Particles className="absolute inset-0 z-0" quantity={100} />
 
-      <main className="relative z-10">
+      <main className="container relative z-10 flex flex-col items-center justify-center">
         <nav className="z-10 my-16">
           <ul className="flex items-center justify-center gap-8">
             {navigation.map((item) => (
@@ -28,7 +28,7 @@ export default function Home() {
           </ul>
         </nav>
 
-        <h1 className="max-w-4xl text-center text-4xl font-bold leading-[1.1]">
+        <h1 className="max-w-4xl text-4xl font-bold leading-[1.1]">
           <Balancer>
             Programador &nbsp;
             <span className="relative">
