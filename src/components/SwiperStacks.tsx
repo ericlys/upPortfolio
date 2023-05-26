@@ -20,6 +20,8 @@ import typescript from '../assets/typescript.svg'
 import vitest from '../assets/vitest.svg'
 import reactNative from '../assets/react-native.svg'
 import reactJs from '../assets/react-js.svg'
+import graphql from '../assets/graphql.svg'
+import docker from '../assets/docker.svg'
 
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -35,6 +37,14 @@ export function SwiperStacks() {
     {
       name: 'Typescript',
       icon: typescript,
+    },
+    {
+      name: 'GraphQL',
+      icon: graphql,
+    },
+    {
+      name: 'Docker',
+      icon: docker,
     },
     {
       name: 'Next',
