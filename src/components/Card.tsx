@@ -96,12 +96,14 @@ export function Card({
         </p>
 
         <div className="end-1 flex justify-end gap-2">
-          <Link href={repoUrl} target="_blank">
-            <button className="flex items-center gap-1 rounded-sm border-2 border-gray-600 px-1 text-xs font-bold text-gray-700 duration-150 hover:scale-110">
-              <Github width={10} />
-              Repositório
-            </button>
-          </Link>
+          {repoUrl && (
+            <Link href={repoUrl} target="_blank">
+              <button className="flex items-center gap-1 rounded-sm border-2 border-gray-600 px-1 text-xs font-bold text-gray-700 duration-150 hover:scale-110">
+                <Github width={10} />
+                Repositório
+              </button>
+            </Link>
+          )}
           {demoUrl && (
             <Link href={demoUrl} target="_blank">
               <button className="flex items-center gap-1 rounded-sm border-2 border-gray-600 px-1 text-xs font-bold text-gray-700 duration-150 hover:scale-110">
