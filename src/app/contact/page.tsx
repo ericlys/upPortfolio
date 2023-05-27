@@ -1,12 +1,5 @@
 import { NavBar } from '@/components/NavBar'
-import {
-  FileDown,
-  GitBranch,
-  Github,
-  Linkedin,
-  Mail,
-  MessageCircle,
-} from 'lucide-react'
+import { FileDown, Github, Linkedin, Mail, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
