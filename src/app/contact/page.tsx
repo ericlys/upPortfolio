@@ -1,5 +1,12 @@
 import { NavBar } from '@/components/NavBar'
-import { FileDown, Linkedin, Mail, MessageCircle } from 'lucide-react'
+import {
+  FileDown,
+  GitBranch,
+  Github,
+  Linkedin,
+  Mail,
+  MessageCircle,
+} from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -41,6 +48,14 @@ export default function ContactPage() {
               >
                 <Linkedin color="white" size={19} />
                 Linked
+              </Link>
+
+              <Link
+                href={'https://github.com/ericlys'}
+                className="flex justify-center gap-2 rounded bg-gray-700 p-2 font-bold text-white hover:scale-105"
+              >
+                <Github color="white" size={19} />
+                Github
               </Link>
 
               <Link
