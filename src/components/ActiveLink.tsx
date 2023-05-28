@@ -17,8 +17,8 @@ export function ActiveLink({ children, ...rest }: ActiveLinkProps) {
       {...rest}
       className={`${
         active
-          ? 'font-medium text-violet-600 duration-200'
-          : 'text-gray-400 hover:text-violet-600'
+          ? 'font-medium text-violet-600 duration-200 dark:text-purple-500'
+          : 'text-gray-400 hover:text-violet-600 dark:hover:text-purple-500'
       } 
       `}
     >

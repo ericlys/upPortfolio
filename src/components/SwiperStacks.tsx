@@ -132,17 +132,11 @@ export function SwiperStacks() {
         swiperRef.current = swiper
       }}
       modules={[Navigation, A11y, Autoplay]}
-      // navigation={{
-      //   nextEl: ,
-      //   prevEl: '.image-swiper-button-prev',
-      //   disabledClass: 'swiper-button-disabled',
-      // }}
       slidesPerView={7}
       pagination={{ clickable: true }}
       loop
       autoplay={{ delay: 1000 }}
       speed={2500}
-      // onSwiper={(swiper) => console.log(swiper)}
     >
       {stacks.map((stack) => (
         <SwiperSlide key={stack.name}>
@@ -155,7 +149,7 @@ export function SwiperStacks() {
               height={130}
               quality={60}
             />
-            <figcaption className="text-xs font-medium text-gray-600">
+            <figcaption className="text-xs font-medium text-gray-600 dark:text-gray-300">
               {stack.name}
             </figcaption>
           </figure>

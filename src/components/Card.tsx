@@ -74,11 +74,13 @@ export function Card({
         style={{ objectFit: 'cover' }}
       />
       <div
-        className={`absolute top-[220px] h-56 w-full rounded-t-lg bg-white p-4 duration-200 ${
+        className={`absolute top-[220px] h-56 w-full rounded-t-lg bg-white p-4 duration-200 dark:bg-slate-900 ${
           isHovered ? '-translate-y-28' : ''
         }`}
       >
-        <h3 className="text-lg font-bold text-gray-600">{title}</h3>
+        <h3 className="text-lg font-bold text-gray-600 dark:text-gray-300">
+          {title}
+        </h3>
         <ul className="ml-2 flex items-center gap-1">
           {stacks.map((stack) => (
             <li
@@ -91,14 +93,14 @@ export function Card({
             </li>
           ))}
         </ul>
-        <p className="m-2 text-sm font-normal text-gray-600 truncate-3-lines">
+        <p className="m-2  text-sm font-normal text-gray-600 truncate-3-lines dark:text-gray-400">
           {description}
         </p>
 
         <div className="end-1 flex justify-end gap-2">
           {repoUrl && (
             <Link href={repoUrl} target="_blank">
-              <button className="flex items-center gap-1 rounded-sm border-2 border-gray-600 px-1 text-xs font-bold text-gray-700 duration-150 hover:scale-110">
+              <button className="flex items-center gap-1 rounded-sm border-2 border-gray-600 px-1 text-xs font-bold text-gray-700 duration-150 hover:scale-110 dark:border-gray-500 dark:text-gray-400">
                 <Github width={10} />
                 Repositório
               </button>
@@ -106,7 +108,7 @@ export function Card({
           )}
           {demoUrl && (
             <Link href={demoUrl} target="_blank">
-              <button className="flex items-center gap-1 rounded-sm border-2 border-gray-600 px-1 text-xs font-bold text-gray-700 duration-150 hover:scale-110">
+              <button className="flex items-center gap-1 rounded-sm border-2 border-gray-600 px-1 text-xs font-bold text-gray-700 duration-150 hover:scale-110 dark:border-gray-500 dark:text-gray-400">
                 <Play width={10} />
                 Demo
               </button>

@@ -2,6 +2,7 @@ import Balancer from 'react-wrap-balancer'
 import Particles from '@/components/Particle'
 import { Underline } from '@/components/Underline'
 import Link from 'next/link'
+import ThemeSwitch from '@/components/ThemeSwitch'
 
 const navigation = [
   { name: 'Projetos', href: '/projects' },
@@ -19,7 +20,7 @@ export default function Home() {
             {navigation.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} legacyBehavior>
-                  <a className="text-base text-gray-600 hover:text-purple-700">
+                  <a className="text-base text-gray-600 hover:text-purple-700 dark:text-gray-400 dark:hover:text-purple-500">
                     {item.name}
                   </a>
                 </Link>
@@ -42,7 +43,7 @@ export default function Home() {
         </h1>
 
         <div className="mt-16">
-          <h2 className="text-center text-gray-500">
+          <h2 className="text-center text-gray-500 dark:text-gray-400">
             <Balancer>
               Olá, sou Ericlys, um desenvolvedor apaixonado por criar
               experiências digitais inovadoras e funcionais. Minha missão é unir
@@ -51,6 +52,7 @@ export default function Home() {
             </Balancer>
           </h2>
         </div>
+        <ThemeSwitch />
       </main>
     </div>
   )

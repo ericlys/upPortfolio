@@ -1,6 +1,7 @@
 'use client'
 
 import { useMousePosition } from '@/utils/mouse'
+import { useTheme } from '@wits/next-themes'
 import React, { useRef, useEffect } from 'react'
 
 interface ParticlesProps {
@@ -18,6 +19,9 @@ export default function Particles({
   ease = 50,
   refresh = false,
 }: ParticlesProps) {
+  const { theme, systemTheme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
+
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const canvasContainerRef = useRef<HTMLDivElement>(null)
   const context = useRef<CanvasRenderingContext2D | null>(null)
@@ -38,7 +42,7 @@ export default function Particles({
     return () => {
       window.removeEventListener('resize', initCanvas)
     }
-  }, [])
+  }, [theme])
 
   useEffect(() => {
     onMouseMove()
@@ -124,7 +128,9 @@ export default function Particles({
       context.current.translate(translateX, translateY)
       context.current.beginPath()
       context.current.arc(x, y, size, 0, 2 * Math.PI)
-      context.current.fillStyle = `rgba(144, 12, 63, ${alpha})`
+      context.current.fillStyle = `rgba( ${
+        currentTheme !== 'dark' ? '57, 0, 203' : '255, 255, 255'
+      }, ${alpha})`
       context.current.fill()
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0)
 

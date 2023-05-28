@@ -27,14 +27,16 @@ export default async function ProjectsPage() {
     <div>
       <NavBar />
       <div className="container mx-auto mb-10 mt-14 p-4">
-        <h2 className="text-3xl font-bold sm:text-4xl">Projetos</h2>
+        <h2 className="text-3xl font-bold dark:text-gray-300 sm:text-4xl">
+          Projetos
+        </h2>
         <span className="text-sm font-medium text-gray-500">
           Alguns dos meus projetos.
         </span>
 
-        <div className="mt-7 h-1 w-full bg-gray-300" />
+        <div className="mt-7 h-1 w-full bg-gray-300 dark:bg-gray-500" />
 
-        <div className="mt-10">
+        <div className="mt-10 dark:rounded dark:bg-gray-900 dark:px-4 dark:py-2">
           <h3 className="mb-3 text-gray-500">Principais tecnologias:</h3>
 
           <SwiperStacks />
