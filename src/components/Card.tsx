@@ -74,8 +74,8 @@ export function Card({
         style={{ objectFit: 'cover' }}
       />
       <div
-        className={`absolute top-[220px] h-56 w-full rounded-t-lg bg-white p-4 duration-200 dark:bg-slate-900 ${
-          isHovered ? '-translate-y-28' : ''
+        className={`absolute w-full rounded-t-lg bg-white p-4 duration-300 dark:bg-slate-900 ${
+          isHovered ? 'top-[100%] -translate-y-full ' : 'top-[220px]'
         }`}
       >
         <h3 className="text-lg font-bold text-gray-600 dark:text-gray-300">
@@ -93,7 +93,7 @@ export function Card({
             </li>
           ))}
         </ul>
-        <p className="m-2  text-sm font-normal text-gray-600 truncate-3-lines dark:text-gray-400">
+        <p className="m-2  text-justify text-sm font-normal text-gray-600 truncate-5-lines dark:text-gray-400">
           {description}
         </p>
 

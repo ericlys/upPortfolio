@@ -11,17 +11,32 @@ export default async function ProjectsPage() {
   const { data } = await fetch(process.env.API_URL!, {
     method: 'POST',
     body: JSON.stringify({
-      query:
-        '{ projects(){ id title slug description imageUrl demoUrl repoUrl stacks{ id title }} }',
+      query: `query GetProjects{
+          projects(stage: PUBLISHED) {
+            id
+            title
+            slug
+            description
+            imageUrl
+            demoUrl
+            repoUrl
+            stacks {
+              id
+              title
+            }
+          }
+        }`,
     }),
     headers: {
       'Content-Type': 'application/json',
     },
     cache: 'force-cache',
     next: {
-      revalidate: 60 * 60,
+      revalidate: 120,
     },
   }).then((res) => res.json())
+
+  console.log(data.projects.length)
 
   return (
     <div>
